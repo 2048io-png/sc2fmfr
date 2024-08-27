@@ -53,6 +53,7 @@ function formatNumber(x, type, cfg)
         "👕", "🎲", "🎮", "🀄", "🍫", "🍩", "🍰", "🍔", "🔇", "💯"];
     let japanese = "~あびちぢえふげはいじかれものおぱくらせてうわをきよし".split("");
     let chinese = "~啊吧次德俄法个哈一家咖里么你哦怕去人四土五发为西牙中".split("");
+    let letters3 = "~ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 
     let sigDigits = 2 - x.e % 3;
 
@@ -73,7 +74,7 @@ function formatNumber(x, type, cfg)
             pre.ones[Math.floor(newE / 3) % pre.ones.length] +
             pre.tens[Math.floor(newE / 30) % pre.tens.length];
     }
-    if(type >= 4 && type <= 10)
+    if(type >= 4 && type <= 11)
     {
         let suffixes = type === 4 ? letters : greek;
         if(type === 6) suffixes = cyrillic;
@@ -81,6 +82,7 @@ function formatNumber(x, type, cfg)
         if (type === 8) suffixes = japanese;
         if (type === 9) suffixes = chinese;
         if (type === 10) suffixes = letters2;
+        if (type === 11) suffixes = letters3;
         let order = Math.floor(Math.log(x.e / 3) / Math.log(suffixes.length));
         let remainingE = x.e;
         let suffix = "";
@@ -113,7 +115,7 @@ function formatNumber(x, type, cfg)
         let e = Math.floor(x.e / 3) * 3;
 
         let prefixesLong = tto({
-            default: ["", "Kilo", "Mega", "Giga", "Tera", "Peta", "Exa", "Zetta", "Yotta", "Ronna", "Quecca"],
+            default: ["", "Kilo", "Mega", "Giga", "Tera", "Peta", "Exa", "Zetta", "Yotta", "Ronna", "Quetta"],
             ru: ["", "Кило", "Мега", "Гига", "Тера", "Пета", "Экса", "Зетта", "Йотта", "Ронна", "Кветта"]
         });
         let prefixes = tto({
