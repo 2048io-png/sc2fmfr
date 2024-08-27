@@ -2720,7 +2720,7 @@ var scenes =
                 }),
                 new UIButton(0.9, 0.05, 0.07, 0.07, images.scenes.daily, () => Scene.loadScene("Daily"), {
                     quadratic: true,
-                    isVisible: () => game.highestBarrelReached >= 1000
+                    isVisible: () => game.highestBarrelReached >= 1100
                 }),
                 new UIButton(0.9, 0.125, 0.07, 0.07, images.buttonReset, () => {
                     if (confirm("Do you really want to reset all 3 quests?")) {
