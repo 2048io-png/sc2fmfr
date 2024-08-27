@@ -379,6 +379,7 @@ var songs =
     gettingItDone: "Sounds/GettingitDone.mp3",
     powerBeams: "Sounds/powerbeams.mp3",
     voltaic: "Sounds/Voltaic.mp3",
+    cheeryMonday: 'Sounds/Cheery Monday.mp3.wav",
 };
 
 var cacheCanvas = document.createElement("canvas");
